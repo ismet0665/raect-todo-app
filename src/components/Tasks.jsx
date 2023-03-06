@@ -2,13 +2,13 @@ import axios from "axios";
 
 const Task = ({ item: { task, date, id, taskDone }, getTasks }) => {
   const delTask = async (objID) => {
-    const BASE_URL = "https://640266ae302b5d671c39f5a4.mockapi.io/todo";
+ const BASE_URL = process.env.REACT_APP_API_URL;;
     await axios.delete(`${BASE_URL}/${objID}`);
     getTasks();
   };
 
   const editTask = async (doneVal) => {
-    const BASE_URL = "https://640266ae302b5d671c39f5a4.mockapi.io/todo";
+ const BASE_URL = process.env.REACT_APP_API_URL;;
     await axios.put(`${BASE_URL}/${id}`, {
       task,
       date,

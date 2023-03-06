@@ -7,7 +7,7 @@ const AddTask = ({ tasks, getTasks }) => {
   console.log(tasks, getTasks);
 
   const addTask = async (obj) => {
-    const BASE_URL = "https://640266ae302b5d671c39f5a4.mockapi.io/todo";
+    const BASE_URL = process.env.REACT_APP_API_URL;
     await axios.post(BASE_URL, obj);
     getTasks();
   };

@@ -9,7 +9,7 @@ function App() {
   const [error, setError] = useState(false);
 
   const getTasks = async () => {
-    const BASE_URL = "https://640266ae302b5d671c39f5a4.mockapi.io/todo";
+    const BASE_URL = process.env.REACT_APP_API_URL;
     await axios(BASE_URL)
       .then((res) => {
         console.log(res);
